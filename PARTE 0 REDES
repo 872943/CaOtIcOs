@@ -1,0 +1,59 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+import random
+
+
+def genera_aleatorios(l):
+    # Genera un array de tamaño l con números aleatorios entre 2 y 8
+    K = np.random.uniform(2, 8, size=l)
+    return K
+
+def genera_ER_no_conexo(N,k_avg):
+    p = k_avg / (N - 1)  # Probabilidad de enlace en ER
+    
+    # Generar red ER
+    G_ER = nx.erdos_renyi_graph(N, p)
+    return G_ER
+
+
+
+def genera_ER_conexo(N,k_avg):
+    p = k_avg / (N - 1)  # Probabilidad de enlace en ER
+    
+    # Generar red ER
+    G_ER = nx.erdos_renyi_graph(N, p)
+    
+    # Extraer solo la componente gigante (elimina automáticamente nodos inconexos)
+    largest_cc = max(nx.connected_components(G_ER), key=len)
+    G_ER_conexa = G_ER.subgraph(largest_cc).copy()
+    return G_ER_conexa
+
+def genera_WS(N, k, p):
+    """
+    Genera una red Watts-Strogatz conexa (solo componente gigante).
+    
+    Parámetros:
+    - N: Número inicial de nodos
+    - k: Número de vecinos contiguos iniciales (debe ser par)
+    - p: Probabilidad de rewiring
+    
+    Retorna:
+    - G_WS_conexa: Red WS conexa (componente gigante)
+    """
+    # Verificar que k es par
+    if k % 2 != 0:
+        raise ValueError("k debe ser par en redes Watts-Strogatz")
+    
+    # Generar red WS
+    G_WS = nx.watts_strogatz_graph(N, k, p)
+    
+    # Extraer componente gigante
+    largest_cc = max(nx.connected_components(G_WS), key=len)
+    G_WS_conexa = G_WS.subgraph(largest_cc).copy()
+    
+    # Ajustar k_real para la componente gigante
+    k_real = 2 * G_WS_conexa.number_of_edges() / len(G_WS_conexa)
+    
+    print(f"Red generada: N={len(G_WS_conexa)} (original {N}), k_real={k_real:.2f} (k_objetivo={k})")
+    return G_WS_conexa
