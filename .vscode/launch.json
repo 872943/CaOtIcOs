@@ -1,0 +1,86 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Main (Parte 0)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/CODIGOS EN C/main(parte 0).exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "preLaunchTask": "Compilar Main (Parte 0)"
+        },
+        {
+            "name": "Main (Parte 1)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/CODIGOS EN C/main(parte 1).exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "preLaunchTask": "Compilar Main (Parte 1)"
+        },
+        {
+            "name": "Main (Parte 2)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/CODIGOS EN C/main(parte 2).exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "preLaunchTask": "Compilar Main (Parte 2)"
+        },
+        {
+            "name": "Main (Parte 3)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/CODIGOS EN C/main(parte 3).exe",
+"args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Ejecutar CaOtIcOs",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/CODIGOS EN C/programa.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "preLaunchTask": "Compilar proyecto CaOtIcOs"
+        }
+        
+}
