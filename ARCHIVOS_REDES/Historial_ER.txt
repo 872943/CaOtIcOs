@@ -1,0 +1,12 @@
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-16 19:23:22
+Parámetros:
+N_redes: 100
+N_nodos: 1000
+k_prom: 10
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_0.txt
+Archivo final generado: ER_99.txt
+---------------------------------------------------------------------------------
+
