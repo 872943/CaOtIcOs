@@ -1,33 +1,22 @@
 ---------------------------------------------------------------------------------
-Fecha de ejecuciÃ³n: 2025-04-16 16:32:16
+Fecha de ejecuciÃÂ³n: 2025-04-16 17:17:59
+ParÃÂ¡metros:
+N_redes: 1000
+N_nodos: 1000
+k: 4
+p: 0.3
+Archivo inicial generado: WS_0.txt
+Archivo final generado: WS_999.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-16 17:31:23
 ParÃ¡metros:
-N_redes: 100
-N_nodos: 1000
-k: 4
-p: 0.5
-Archivo inicial generado: WS_20.txt
-Archivo final generado: WS_119.txt
----------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------
-Fecha de ejecuciÃÂ³n: 2025-04-16 16:34:28
-ParÃÂ¡metros:
 N_redes: 10
 N_nodos: 1000
 k: 4
-p: 0.5
-Archivo inicial generado: WS_120.txt
-Archivo final generado: WS_129.txt
----------------------------------------------------------------------------------
-
----------------------------------------------------------------------------------
-Fecha de ejecuciÃÂ³n: 2025-04-16 16:35:43
-ParÃÂ¡metros:
-N_redes: 10
-N_nodos: 1000
-k: 4
-p: 0.5
-Archivo inicial generado: WS_130.txt
-Archivo final generado: WS_139.txt
+p: 0.3
+Archivo inicial generado: WS_0.txt
+Archivo final generado: WS_9.txt
 ---------------------------------------------------------------------------------
 
