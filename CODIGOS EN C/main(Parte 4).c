@@ -32,24 +32,93 @@ int main() {
     //las redes ER con <k>=14 son las que van de ER_400 a ER_599
 
     int number_name=399;
+    int n_pol_6=0;
+    int n_pol_14=0;
     
+
     //bucle para <k>=6
+    //aqui vamos a hacer 200 simulaciones para cada valor de betta, y al final de cada simulacion
+    //vamos a ver si la red es polarizada o no, y lo guardamos en un fichero.
+
+
+    int=ult_num
+    char* nom_carp_out = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\polarizacion\\6";
+    ult_num_out = obtener_siguiente_indice(nom_carp_out);
+    char filename_out[512];
+    sprintf(filename_out, "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\polarizacion\\6\\ER6_%d.txt", ult_num_out);
+    //ahora tenemos un fichero donde vamos a guardar los resultados de la polarizacion de cada red.
+
+
+    int num_polarizadas=0;
+    char* nom_carp_in
+    //bucle para <k>=6
+
     for(int i=0;i<N;i++) {
         muchas_simulaciones_ER(N_sim, N_pasos, dt,K, betta, number_name);
+        nom_carp_in = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER";
+        ult_num_in = obtener_siguiente_indice(nom_carp_in);
+        //me hago las 200 simulaciones para esa betta
+        for(int j=0; j<N_sim;j++){
+            //miro mis 200 ficheros y cuento cuantas son polarizadas
+            //paso el archivo a la funcion es_polarizada y me devuelve un 1 o un 0.
+            
+            char fich_in[512];
+            sprintf("C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER\\ER_%d.txt", ult_num_in-j);
+            if (es_polarizada(fich_in)) {
+                num_polarizadas++;
+            }
+
+        }
+
+        //ahora guardo el resultado en el fichero de salida
+        fopen(filename_out,"a");
+        fprintf(filename_out, "%f\t %d\n", betta, num_polarizadas);
+        fclose(filename_out);
+
         betta=betta+delta_betta;
     }
+    //ahora tenemos un fichero donde tenemos la betta y el numero de redes polarizadas para cada betta.
+
 
 
     number_name=599;
     betta=0;
+    nom_carp_out = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\polarizacion\\14";
+    ult_num_out = obtener_siguiente_indice(nom_carp_out);
+    sprintf(filename_out, "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\polarizacion\\14\\ER14_%d.txt", ult_num_out);
+    //ahora tenemos un fichero donde vamos a guardar los resultados de la polarizacion de cada red.
 
-    //bucle para <k>=14
+
+    num_polarizadas=0;
+    //bucle para <k>=6
+
     for(int i=0;i<N;i++) {
         muchas_simulaciones_ER(N_sim, N_pasos, dt,K, betta, number_name);
+        nom_carp_in = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER";
+        ult_num_in = obtener_siguiente_indice(nom_carp_in);
+        //me hago las 200 simulaciones para esa betta
+        for(int j=0; j<N_sim;j++){
+            //miro mis 200 ficheros y cuento cuantas son polarizadas
+            //paso el archivo a la funcion es_polarizada y me devuelve un 1 o un 0.
+            
+            char fich_in[512];
+            sprintf("C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER\\ER_%d.txt", ult_num_in-j);
+            if (es_polarizada(fich_in)) {
+                num_polarizadas++;
+            }
+
+        }
+
+        //ahora guardo el resultado en el fichero de salida
+        fopen(filename_out,"a");
+        fprintf(filename_out, "%f\t %d\n", betta, num_polarizadas);
+        fclose(filename_out);
+
         betta=betta+delta_betta;
     }
 
 
 
+    //bueno si estoy quisiera funcionar seria top, pero como no es el caso pues xd, contianuamos.
 
 }

@@ -234,11 +234,12 @@ int obtener_siguiente_indice(const char* carpeta) {
 }
 
 void muchas_simulaciones_ER(int N_sim, int N_pasos, double dt, double K, double betta, int number_name) {
-    char* direccion_input = "ARCHIVOS_REDES\\ER";
-    char* carpeta_output = "Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER";
+    char* direccion_input = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\ARCHIVOS_REDES\\ER";
+    char* carpeta_output = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER";
 
     int indice_salida = obtener_siguiente_indice(carpeta_output);
     int indice_salida_inicial = indice_salida;
+    printf('te lo suplico');
 
     for (int j = 0; j < N_sim; j++) {
         char filename_input[512];
@@ -246,15 +247,19 @@ void muchas_simulaciones_ER(int N_sim, int N_pasos, double dt, double K, double 
 
         int id_input = number_name - j;
         int id_output = indice_salida++;
+        printf("1");
 
         sprintf(filename_input, "%s_%d.txt", direccion_input, id_input);
+        printf("me cago en %s",filename_input);
         sprintf(filename_output, "%s\\ER_%d.txt", carpeta_output, id_output);
 
         simula_polarizacion(filename_input, N_pasos, dt, K, betta, filename_output);
     }
 
     // Guardar historial
+
     char historial_path[512];
+
     sprintf(historial_path, "%s\\ER_Historial.txt", carpeta_output);
 
     FILE* historial = fopen(historial_path, "a");
@@ -329,6 +334,43 @@ void muchas_simulaciones_WS(int N_sim, int N_pasos, double dt, double K, double 
     fclose(historial);
 }
 
+#include <stdio.h>
+#include <stdlib.h>
 
+bool es_polarizada(const char* filename) {
+    //le pasas el nombre de un archivo con la evolución temporal de una red y a partir de los
+    //últimos valores registrados para la media y la varianza, te dice si es polarizada (true) o no (false)
+    FILE* file = fopen(filename, "r");
+    if (file == NULL) {
+        fprintf(stderr, "Error al abrir el archivo %s\n", filename);
+        exit(1);
+    }
+
+    double t, x, desv;
+    while (fscanf(file, "%lf %lf %lf", &t, &x, &desv) == 3) {
+        *tiempo = t;
+        *x_medio = x;
+        *desviacion = desv;
+    }
+
+    fclose(file);
+
+    
+    //el criterio que vamos a seguir para decidir si es polarizada o no es el siguiente:
+           //si la media=0 y la varianza!=0, es polarizada
+           //si la media!=0 y la varianza!=0, entonces sera polarizada si la media es menor
+           //para el resto de casos NO es polarizada
+
+    double eps=0.0001; //tolerancia para evitar problemas de redondeo, REVISAR
+    
+    if (fabs(x) < eps && desv > eps) {
+        return true;  // Polarizada
+    } else if (fabs(x) > eps && desv > eps) {
+        return fabs(x) < desv;  // Polarizada si la media es menor que la desviación
+    } else {
+        return false;  // No polarizada
+    }
+
+}
 
 

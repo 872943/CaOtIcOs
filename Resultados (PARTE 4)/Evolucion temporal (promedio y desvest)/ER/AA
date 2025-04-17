@@ -1,0 +1,13 @@
+FORMATO DE LOS ARCHIVOS ER_i.txt (Porvenientes de la funcion muchas_simulaciones_ER)
+
+En la primera fila, están los siguientes parámetros de la simulación:
+
+K, betta, N_pasos, dt
+
+En las siguientes filas:
+
+Columna 1: Instante de tiempo de la simulación
+
+Columna 2: X_medio
+
+Columna 3:desviación estandart de x

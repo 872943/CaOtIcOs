@@ -35,4 +35,7 @@ void muchas_simulaciones_ER(int N_sim, int N_pasos, double dt, double K, double 
 
 void muchas_simulaciones_WS(int N_sim, int N_pasos, double dt, double K, double betta, int number_name);
 
+bool es_polarizada(const char* filename);
+
+
 #endif
