@@ -11,4 +11,6 @@ int main() {
     int number_name=99;
 
     muchas_simulaciones_ER(N_sim, N_pasos, dt,K, betta, number_name);
+
+
 }
