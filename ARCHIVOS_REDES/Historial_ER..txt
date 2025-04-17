@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-16 19:23:22
+ParÃ¡metros:
+N_redes: 100
+N_nodos: 1000
+k_prom: 10
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_0.txt
+Archivo final generado: ER_99.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-17 15:52:08
+ParÃ¡metros:
+N_redes: 100
+N_nodos: 1000
+k_prom: 10
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_100.txt
+Archivo final generado: ER_199.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-17 16:44:01
+ParÃ¡metros:
+N_redes: 200
+N_nodos: 1000
+k_prom: 6
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_200.txt
+Archivo final generado: ER_399.txt
+---------------------------------------------------------------------------------
+
