@@ -34,3 +34,15 @@ Archivo inicial generado: ER_200.txt
 Archivo final generado: ER_399.txt
 ---------------------------------------------------------------------------------
 
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-17 16:48:37
+Parámetros:
+N_redes: 200
+N_nodos: 1000
+k_prom: 14
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_400.txt
+Archivo final generado: ER_599.txt
+---------------------------------------------------------------------------------
+
