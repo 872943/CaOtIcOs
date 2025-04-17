@@ -235,7 +235,7 @@ int obtener_siguiente_indice(const char* carpeta) {
 
 void muchas_simulaciones_ER(int N_sim, int N_pasos, double dt, double K, double betta, int number_name) {
     char* direccion_input = "C:\\Users\\HP\\Desktop\\FISICA\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\ARCHIVOS_REDES\\ER";
-    char* carpeta_output = "C:\\Users\\USUARIO\\Downloads\\CAOS\\CaOtIcOs\\Resultados (Parte 0)\\Evolucion temporal (promedio y desvest)\\ER";
+    char* carpeta_output = "C:\\Users\\HP\\Desktop\\FISICA\3 (2024-2025)\\segundo cuatri\\caos\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)";
 
     int indice_salida = obtener_siguiente_indice(carpeta_output);
     int indice_salida_inicial = indice_salida;

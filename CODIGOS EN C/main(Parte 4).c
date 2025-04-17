@@ -14,6 +14,9 @@ int main() {
 
 
     double K=10;         // a partir de ahora fijamos K=10
+    int N_sim=200;
+    int N_pasos=280;   
+    double dt=0.1;
     double betta_max=1.0
     double betta= 0
     double N, delta_betta
@@ -24,6 +27,15 @@ int main() {
 
     //queremos ver cuál es la fracción de estados en los que obtenemos polarización.
     //Para ello, vamos a simular 200 veces para cada valor de betta para cada <k>.
+    //las redes ER con <k>=6 son las que van de ER_200 a ER_399
+    //las redes ER con <k>=14 son las que van de ER_400 a ER_599
+
+    int number_name=200;
+
+    muchas_simulaciones_ER(N_sim, N_pasos, dt,K, betta, number_name);
+
+
+
 
     int N_sim=200
 
