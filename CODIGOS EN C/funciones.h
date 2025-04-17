@@ -9,6 +9,8 @@
 #include <string.h>
 #include <dirent.h>
 #include <ctype.h>
+#include <stdbool.h>
+#include <unistd.h> // Para sleep en Linux, si es necesario
 
 // Declaraciones de funciones
 void leer_red(const char* filename, int** vecinos, int** grados, int* total_nodos);

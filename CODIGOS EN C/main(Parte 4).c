@@ -41,8 +41,9 @@ int main() {
     //vamos a ver si la red es polarizada o no, y lo guardamos en un fichero.
 
 
-    int=ult_num
-    char* nom_carp_out = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\polarizacion\\6";
+    int ult_num_out, ult_num_in;
+    char* nom_carp_out;
+    nom_carp_out = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\polarizacion\\6";
     ult_num_out = obtener_siguiente_indice(nom_carp_out);
     char filename_out[512];
     sprintf(filename_out, "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\polarizacion\\6\\ER6_%d.txt", ult_num_out);
@@ -50,7 +51,7 @@ int main() {
 
 
     int num_polarizadas=0;
-    char* nom_carp_in
+    char* nom_carp_in;
     //bucle para <k>=6
 
     for(int i=0;i<N;i++) {

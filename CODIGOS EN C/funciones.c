@@ -1,4 +1,6 @@
 #include "funciones.h"
+#include <stdbool.h>
+#include <dirent.h>
 
 
 void leer_red(const char* filename, int** vecinos, int** grados, int* total_nodos) {
@@ -334,9 +336,6 @@ void muchas_simulaciones_WS(int N_sim, int N_pasos, double dt, double K, double 
     fclose(historial);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-
 bool es_polarizada(const char* filename) {
     //le pasas el nombre de un archivo con la evolución temporal de una red y a partir de los
     //últimos valores registrados para la media y la varianza, te dice si es polarizada (true) o no (false)
@@ -346,11 +345,13 @@ bool es_polarizada(const char* filename) {
         exit(1);
     }
 
+    double tiempo, x_medio, desviacion;
+
     double t, x, desv;
     while (fscanf(file, "%lf %lf %lf", &t, &x, &desv) == 3) {
-        *tiempo = t;
-        *x_medio = x;
-        *desviacion = desv;
+        tiempo = t;
+        x_medio = x;
+        desviacion = desv;
     }
 
     fclose(file);
