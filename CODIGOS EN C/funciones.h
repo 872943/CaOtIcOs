@@ -39,5 +39,7 @@ void muchas_simulaciones_WS(int N_sim, int N_pasos, double dt, double K, double 
 
 bool es_polarizada(const char* filename);
 
+double valor_medio(double arr[], int tam);
+
 
 #endif

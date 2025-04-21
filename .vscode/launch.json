@@ -48,13 +48,13 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/CODIGOS EN C/main(parte 3).exe",
-"args": [],
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "/path/to/gdb",
+            "miDebuggerPath": "gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -95,6 +95,20 @@
             "MIMode": "gdb",
             "miDebuggerPath": "gdb",
             "preLaunchTask": "Compilar Main (Parte 4)"
+        },
+        {
+            "name": "Main (Parte 5)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/CODIGOS EN C/main(parte 5).exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "preLaunchTask": "Compilar Main (Parte 5)"
         }
-        
+    ]
 }

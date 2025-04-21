@@ -375,3 +375,12 @@ bool es_polarizada(const char* filename) {
 }
 
 
+
+double valor_medio(double arr[], int tam) {
+// Función que calcula el valor medio de un array de doubles
+    double suma = 0.0;
+    for (int i = 0; i < tam; i++) {
+        suma += arr[i];
+    }
+    return suma / tam;
+}
