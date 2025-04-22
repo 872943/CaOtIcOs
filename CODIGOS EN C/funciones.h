@@ -41,5 +41,15 @@ bool es_polarizada(const char* filename);
 
 double valor_medio(double arr[], int tam);
 
+double desviacion_estandar(double arr[], int tam, double media);
+
+void escribe_evolucion_individual(char* filename_output, int N_nodos, double *x, double tiempo);
+
+void escribe_velocidad_modulo(char* filename_output, double tiempo, double velocidad);
+
+void evolucion_persona_a_persona(char* filename_input, char* filename_output, int N_pasos, double dt, double K, double betta, char* filename_output_velocidad);
+
+double cacula_velocidad_modulo(double K, double betta, double delta, int* vecinos, int *grados, double* x, int total_nodos);
+
 
 #endif

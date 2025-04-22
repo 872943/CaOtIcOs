@@ -9,8 +9,15 @@ int main() {
     double K=10;
     double betta=0.1;
     int number_name=99;
+    evolucion_persona_a_persona(
+        "ARCHIVOS_REDES/ER/ER_0.txt",
+        "Resultados (PARTE 0)/Evolucion individual/ER/evoluciones/ER_0.txt",
+        N_pasos,
+        dt,
+        K,
+        betta,
+        "Resultados (PARTE 0)/Evolucion individual/ER/velocidades/ER_0.txt"
+    );
 
-    muchas_simulaciones_ER(N_sim, N_pasos, dt,K, betta, number_name);
-
-
+    return 0;
 }
