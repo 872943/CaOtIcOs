@@ -51,5 +51,6 @@ void evolucion_persona_a_persona(char* filename_input, char* filename_output, in
 
 double cacula_velocidad_modulo(double K, double betta, double delta, int* vecinos, int *grados, double* x, int total_nodos);
 
+bool esta_termalizada(K,betta,delta,vecinos,grados,x,total_nodos);
 
 #endif
