@@ -47,6 +47,245 @@ Archivo final generado: ER_599.txt
 ---------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
+Fecha de ejecuciÃ³n: 2025-04-22 11:30:28
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_600.txt
+Archivo final generado: ER_600.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:30:28
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.1
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_601.txt
+Archivo final generado: ER_601.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:30:28
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.2
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_602.txt
+Archivo final generado: ER_602.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:30:28
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.3000000000000003
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_603.txt
+Archivo final generado: ER_603.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:30:29
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.4000000000000004
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_604.txt
+Archivo final generado: ER_604.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:30:29
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.5000000000000004
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_605.txt
+Archivo final generado: ER_605.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:30:29
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.6000000000000005
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_606.txt
+Archivo final generado: ER_606.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:30:29
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.7000000000000006
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_607.txt
+Archivo final generado: ER_607.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:30:29
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.8000000000000007
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_608.txt
+Archivo final generado: ER_608.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:30:29
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.900000000000001
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_609.txt
+Archivo final generado: ER_609.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:46:31
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 100
+k_prom: 2
+aceptancia_N (%): 10
+aceptancia_k (%): 3
+Archivo inicial generado: ER_610.txt
+Archivo final generado: ER_610.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:46:44
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 100
+k_prom: 2.1
+aceptancia_N (%): 10
+aceptancia_k (%): 3
+Archivo inicial generado: ER_611.txt
+Archivo final generado: ER_611.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:46:48
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 100
+k_prom: 2.2
+aceptancia_N (%): 10
+aceptancia_k (%): 3
+Archivo inicial generado: ER_612.txt
+Archivo final generado: ER_612.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:46:48
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 100
+k_prom: 2.3000000000000003
+aceptancia_N (%): 10
+aceptancia_k (%): 3
+Archivo inicial generado: ER_613.txt
+Archivo final generado: ER_613.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:46:48
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 100
+k_prom: 2.4000000000000004
+aceptancia_N (%): 10
+aceptancia_k (%): 3
+Archivo inicial generado: ER_614.txt
+Archivo final generado: ER_614.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:46:49
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 100
+k_prom: 2.5000000000000004
+aceptancia_N (%): 10
+aceptancia_k (%): 3
+Archivo inicial generado: ER_615.txt
+Archivo final generado: ER_615.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:46:49
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 100
+k_prom: 2.6000000000000005
+aceptancia_N (%): 10
+aceptancia_k (%): 3
+Archivo inicial generado: ER_616.txt
+Archivo final generado: ER_616.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:46:49
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 100
+k_prom: 2.7000000000000006
+aceptancia_N (%): 10
+aceptancia_k (%): 3
+Archivo inicial generado: ER_617.txt
+Archivo final generado: ER_617.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:46:49
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 100
+k_prom: 2.8000000000000007
+aceptancia_N (%): 10
+aceptancia_k (%): 3
+Archivo inicial generado: ER_618.txt
+Archivo final generado: ER_618.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-22 11:46:49
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 100
+k_prom: 2.900000000000001
+aceptancia_N (%): 10
+aceptancia_k (%): 3
+Archivo inicial generado: ER_619.txt
+Archivo final generado: ER_619.txt
+=======
 Fecha de ejecuciÃ³n: 2025-04-22 23:32:51
 ParÃ¡metros:
 N_redes: 100
@@ -56,5 +295,6 @@ aceptancia_N (%): 2
 aceptancia_k (%): 2
 Archivo inicial generado: ER_600.txt
 Archivo final generado: ER_699.txt
+>>>>>>> c5010c0fe79a805598955a1611a652378b970b51
 ---------------------------------------------------------------------------------
 
