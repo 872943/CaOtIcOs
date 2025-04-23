@@ -7,8 +7,8 @@ int main() {
     int N_sim=100;
     int N_pasos=1000;
     double dt=0.1;
-    double K=10;
-    double betta=1.5;
+    double K=5;
+    double betta=0;
     int number_name=99;
     int total_nodos;
 

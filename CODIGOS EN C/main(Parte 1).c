@@ -4,16 +4,16 @@
 int main() {
     double dt=0.1;
     int N_pasos=50;
-    int N_redes=100;
-    int rede_ini=620;
+    int N_redes=10;
+    int rede_ini=0;
 
 
 
 
-    double betta_inicial=0;
+    double betta_inicial=1.5;
     double betta_final=3;
-    double K_inicial=0;
-    double K_final=10;
+    double K_inicial=10;
+    double K_final=20;
     double delta_K=0.1;
     double delta_betta=0.05;
     

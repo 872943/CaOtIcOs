@@ -311,6 +311,7 @@ void evolucion_persona_a_persona(char*filename_input,char*filename_output, int N
 bool esta_termalizada(double K, double betta, double delta, int* vecinos, int* grados, double* x, int total_nodos) {
     double a = 0.03;  // Parámetro para determinar si el sistema está termalizado
     double v = cacula_velocidad_modulo(K, betta, delta, vecinos, grados, x, total_nodos);
+    printf("+2\n");
     if (K<1){
         return (v<sqrt(total_nodos)*a);
     }else{
@@ -486,6 +487,7 @@ void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*fil
         } else {
             no_polarizadas++;
         }
+        printf("op_media: %lf, desvest: %lf\n", &op_media, &desvest);
     }
 
     char output_path[512];
@@ -541,7 +543,7 @@ void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, do
     bool flag=false;
 
     while(flag==false){
-    while(j<N_pasos){
+    for(int j=0;j<N_pasos;j++){
         rk4_step(x,total_nodos,dt,K, betta,delta,vecinos, grados);
         j++;
     }
