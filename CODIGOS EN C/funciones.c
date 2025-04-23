@@ -133,24 +133,29 @@ void rk4_step(double* x, int total_nodos, double dt,
     free(x_temp);
 }
 
-double condiciones_iniciales(double K, int total_nodos, double *x0){
-double gamma;
-if(K<1){
-    for(int j=0;j<total_nodos;j++){
-        x0[j]=-1 + ((double)rand() / RAND_MAX)*2;
+double condiciones_iniciales(double K, int total_nodos, double *x0) {
+    if (total_nodos <= 0) {
+        fprintf(stderr, "Error: total_nodos debe ser mayor que 0\n");
+        exit(EXIT_FAILURE);
     }
-            gamma=0.002;
-}
-    else{
 
-        for(int j=0;j<total_nodos;j++){
-        x0[j]=-K + ((double)rand() / RAND_MAX)*2*K;
+    double gamma;
+    if (K < 1) {
+        for (int j = 0; j < total_nodos; j++) {
+            // Generar valores entre -1 y 1
+            x0[j] = -1.0 + ((double)rand() / (double)RAND_MAX) * 2.0;
+        }
+        gamma = 0.002;
+    } else {
+        for (int j = 0; j < total_nodos; j++) {
+            // Generar valores entre -K y K
+            x0[j] = -K + ((double)rand() / (double)RAND_MAX) * (2.0 * K);
+        }
+        gamma = 0.002 * K;
     }
-    gamma=0.002*K;
-}
-return gamma;
-}
 
+    return gamma;
+}
 
 void polarizacion(double *x, int total_nodos, double *op_media, double *desvest){
 double promedio=0;
@@ -184,7 +189,21 @@ void escribe_evolucion_polarizacion(double tiempo, double x_med, double x_desves
     fclose(archivo);
 }
 
+double cacula_velocidad_modulo(double K, double betta, double delta, int* vecinos, int *grados, double* x, int total_nodos){ 
 
+    double * velocidad = malloc(total_nodos * sizeof(double));
+    if (velocidad == NULL) {
+        fprintf(stderr, "Error: no se pudo asignar memoria\n");
+        exit(1);
+    }
+    derivada(K,betta,delta,vecinos,grados,x,velocidad,total_nodos);
+
+    double suma = 0.0;
+    for (int i = 0; i < total_nodos; i++) {
+        suma += velocidad[i] * velocidad[i];
+    }
+    return sqrt(suma);
+}
 
 void simula_polarizacion(const char* filename_input, int N_pasos, double dt,double K, double betta, const char* filename_output){
     FILE *archivo = fopen(filename_output, "w"); //Para crear el archivo
@@ -235,13 +254,79 @@ int obtener_siguiente_indice(const char* carpeta) {
     return max_index + 1;
 }
 
+void escribe_evolucion_individual(char*filename_output,int N_nodos, double *x, double tiempo){
+    FILE *archivo = fopen(filename_output, "a");  // "a" para añadir sin sobrescribir
+
+    if (archivo == NULL) {
+        fprintf(stderr, "Error al abrir el archivo %s\n", filename_output);
+        return;
+    }
+
+    fprintf(archivo, "%lf\t", tiempo);
+    for(int i=0;i<N_nodos;i++){
+        fprintf(archivo, "%lf\t", x[i]);
+    }
+    fprintf(archivo, "\n");
+    fclose(archivo);
+
+}
+
+void escribe_velocidad_modulo(char*filename_output,double tiempo, double velocidad){
+    FILE *archivo = fopen(filename_output, "a");  // "a" para añadir sin sobrescribir
+
+    if (archivo == NULL) {
+        fprintf(stderr, "Error al abrir el archivo %s\n", filename_output);
+        return;
+    }
+
+    fprintf(archivo, "%lf\t%lf\n", tiempo,velocidad);
+    fclose(archivo);
+
+}
+
+void evolucion_persona_a_persona(char*filename_input,char*filename_output, int N_pasos, double dt, double K, double betta, char*filename_output_velocidad){
+    // Esta función simula la evolución de la polarización de una red a lo largo del tiempo y guarda los resultados en un archivo de salida.
+    // La red se lee desde un archivo de entrada y se simula durante N_pasos pasos de tiempo con un tamaño de paso dt.
+    // Los parámetros K y betta son constantes que afectan la dinámica de la red. number_name es un número que se utiliza para identificar la simulación.
+    FILE *archivo_velocidad = fopen(filename_output_velocidad, "w"); //Para crear el archivo
+    fprintf(archivo_velocidad, "%lf\t%lf\t%d\t%lf\t%s\n", K, betta, N_pasos, dt, filename_input);
+    FILE *archivo = fopen(filename_output, "w"); //Para crear el archivo
+    fprintf(archivo, "%lf\t%lf\t%d\t%lf\t%s\n", K, betta, N_pasos, dt, filename_input);
+    int* vecinos;
+    int* grados;
+    int total_nodos = 0;
+    double delta;
+    leer_red(filename_input, &vecinos, &grados, &total_nodos);
+    double x[total_nodos];
+    delta= condiciones_iniciales(K,total_nodos,x);
+    escribe_evolucion_individual(filename_output,total_nodos,x,dt*0.0);
+    for(int j=0;j<N_pasos;j++){
+        rk4_step(x,total_nodos,dt,K, betta,delta,vecinos, grados);
+        escribe_evolucion_individual(filename_output,total_nodos,x,dt*(j+1));
+        double velocidad_modulo=cacula_velocidad_modulo(K,betta,delta,vecinos,grados,x,total_nodos);
+        escribe_velocidad_modulo(filename_output_velocidad,dt*(j+1),velocidad_modulo);
+    }
+}
+
+bool esta_termalizada(double K, double betta, double delta, int* vecinos, int* grados, double* x, int total_nodos) {
+    double a = 0.03;  // Parámetro para determinar si el sistema está termalizado
+    double v = cacula_velocidad_modulo(K, betta, delta, vecinos, grados, x, total_nodos);
+    if (K<1){
+        return (v<sqrt(total_nodos)*a);
+    }else{
+        return (v<sqrt(total_nodos)*a*K);
+
+    }
+}
+
+
+
 void muchas_simulaciones_ER(int N_sim, int N_pasos, double dt, double K, double betta, int number_name) {
     char* direccion_input = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\ARCHIVOS_REDES\\ER";
     char* carpeta_output = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER";
 
     int indice_salida = obtener_siguiente_indice(carpeta_output);
     int indice_salida_inicial = indice_salida;
-    printf('te lo suplico');
 
     for (int j = 0; j < N_sim; j++) {
         char filename_input[512];
@@ -383,4 +468,84 @@ double valor_medio(double arr[], int tam) {
         suma += arr[i];
     }
     return suma / tam;
+}
+
+void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*filename_output, double N_pasos, double dt) {
+    char* carpeta_output = "C:\\Users\\USUARIO\\CaOtIcOs\\Resultados (PARTE 1)\\MAPA CALOR";
+    int polarizadas = 0;
+    int no_polarizadas = 0;
+    char filename_input[512];
+    double op_media, desvest;
+
+    for (int i = 0; i < N_redes; i++) {
+        printf("+1");
+        sprintf(filename_input, "ARCHIVOS_REDES\\ER\\ER_%d.txt", rede_ini + i);
+        evolucion_hasta_decir_basta(filename_input, N_pasos, dt, K, betta, &op_media, &desvest);
+        if (fabs(op_media) < desvest) {
+            polarizadas++;
+        } else {
+            no_polarizadas++;
+        }
+    }
+
+    char output_path[512];
+    sprintf(output_path, "%s\\%s.txt", carpeta_output, filename_output);  
+
+    FILE* archivo = fopen(output_path, "a");
+    if (archivo == NULL) {
+        fprintf(stderr, "Error al abrir o crear el archivo de salida %s\n", output_path);
+        return;
+    }
+
+    fprintf(archivo, "%lf\t%lf\t%d\t%d\n", K, betta, polarizadas, no_polarizadas);
+    fclose(archivo);
+
+    // Guardar historial
+    char historial_path[512];
+    sprintf(historial_path, "%s\\ER_Historial.txt", carpeta_output);  
+
+    FILE* historial = fopen(historial_path, "a");
+    if (historial == NULL) {
+        perror("No se pudo abrir el archivo de historial");
+        return;
+    }
+
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+
+    fprintf(historial, "--------------------------------------------------------------------------------\n");
+    fprintf(historial, "Fecha: %04d-%02d-%02d %02d:%02d:%02d\n", 
+            tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+            tm.tm_hour, tm.tm_min, tm.tm_sec);
+    fprintf(historial, "Redes (input): ER_%d.txt a ER_%d.txt\n", rede_ini, rede_ini + N_redes - 1);
+    fprintf(historial, "Resultados (output): %s\n", filename_output);
+    fprintf(historial, "Parámetros -> K: %.2lf | β: %.2lf | dt: %.4lf | N_pasos: %.0lf\n", 
+            K, betta, dt, N_pasos);
+    fprintf(historial, "--------------------------------------------------------------------------------\n\n");
+
+    fclose(historial);
+}
+
+
+
+void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, double K, double betta, double *op_media, double *desvest){
+
+    int* vecinos;
+    int* grados;
+    int total_nodos = 0;
+    double delta;
+    leer_red(filename_input, &vecinos, &grados, &total_nodos);
+    double x[total_nodos];
+    delta= condiciones_iniciales(K,total_nodos,x);
+    int j=0;
+    bool flag=false;
+
+    while(flag==false){
+    while(j<N_pasos){
+        rk4_step(x,total_nodos,dt,K, betta,delta,vecinos, grados);
+        j++;
+    }
+    flag= esta_termalizada(K,betta,delta,vecinos,grados,x,total_nodos);
+}
+polarizacion(x, total_nodos, op_media, desvest);
 }

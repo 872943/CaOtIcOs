@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 N_ideal: 10
 N_real: 10
 k_prom_ideal: 2.7000000000000006
 k_prom_real: 2.8
+=======
+N_ideal: 10000
+N_real: 10000
+k_prom_ideal: 10
+k_prom_real: 9.969
+>>>>>>> c5010c0fe79a805598955a1611a652378b970b51

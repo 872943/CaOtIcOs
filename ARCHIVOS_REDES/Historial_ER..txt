@@ -47,6 +47,7 @@ Archivo final generado: ER_599.txt
 ---------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------
+<<<<<<< HEAD
 Fecha de ejecuciÃ³n: 2025-04-22 11:30:28
 ParÃ¡metros:
 N_redes: 1
@@ -284,5 +285,16 @@ aceptancia_N (%): 10
 aceptancia_k (%): 3
 Archivo inicial generado: ER_619.txt
 Archivo final generado: ER_619.txt
+=======
+Fecha de ejecuciÃ³n: 2025-04-22 23:32:51
+ParÃ¡metros:
+N_redes: 100
+N_nodos: 10000
+k_prom: 10
+aceptancia_N (%): 2
+aceptancia_k (%): 2
+Archivo inicial generado: ER_600.txt
+Archivo final generado: ER_699.txt
+>>>>>>> c5010c0fe79a805598955a1611a652378b970b51
 ---------------------------------------------------------------------------------
 
