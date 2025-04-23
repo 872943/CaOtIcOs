@@ -533,7 +533,7 @@ void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*fil
 }
 
 
-
+/*
 void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, double K, double betta, double *op_media, double *desvest){
 
     int* vecinos;
@@ -553,5 +553,5 @@ void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, do
     }
     flag= esta_termalizada(K,betta,delta,vecinos,grados,x,total_nodos);
     polarizacion(x,total_nodos, &op_media,&desvest);
-}
-}
+    }
+}*/

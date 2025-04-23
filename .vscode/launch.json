@@ -82,20 +82,21 @@
             "miDebuggerPath": "gdb",
             "preLaunchTask": "Compilar proyecto CaOtIcOs"
         },
-        {
-            "name": "Main (Parte 4)",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/CODIGOS EN C/main(parte 4).exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": true,
-            "MIMode": "gdb",
-            "miDebuggerPath": "gdb",
-            "preLaunchTask": "Compilar Main (Parte 4)"
-        },
+        
+                {
+                    "name": "Main (Parte 4)",
+                    "type": "cppdbg",
+                    "request": "launch",
+                    "program": "${workspaceFolder}/CODIGOS EN C/main(parte 4).exe",
+                    "args": [],
+                    "stopAtEntry": false,
+                    "cwd": "${workspaceFolder}",
+                    "environment": [],
+                    "externalConsole": true,
+                    "MIMode": "gdb",
+                    "miDebuggerPath": "gdb",
+                    "preLaunchTask": "Compilar Main (Parte 4)"
+                },
         {
             "name": "Main (Parte 5)",
             "type": "cppdbg",
