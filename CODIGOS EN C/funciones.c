@@ -295,6 +295,8 @@ void evolucion_persona_a_persona(char*filename_input,char*filename_output, int N
     int* vecinos;
     int* grados;
     int total_nodos = 0;
+    double desvest;
+    double op_media;
     double delta;
     leer_red(filename_input, &vecinos, &grados, &total_nodos);
     double x[total_nodos];
@@ -306,12 +308,15 @@ void evolucion_persona_a_persona(char*filename_input,char*filename_output, int N
         double velocidad_modulo=cacula_velocidad_modulo(K,betta,delta,vecinos,grados,x,total_nodos);
         escribe_velocidad_modulo(filename_output_velocidad,dt*(j+1),velocidad_modulo);
     }
+
+    fclose(archivo_velocidad);
+    fclose(archivo);
+
 }
 
 bool esta_termalizada(double K, double betta, double delta, int* vecinos, int* grados, double* x, int total_nodos) {
     double a = 0.03;  // Parámetro para determinar si el sistema está termalizado
     double v = cacula_velocidad_modulo(K, betta, delta, vecinos, grados, x, total_nodos);
-    printf("+2\n");
     if (K<1){
         return (v<sqrt(total_nodos)*a);
     }else{
@@ -487,7 +492,6 @@ void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*fil
         } else {
             no_polarizadas++;
         }
-        printf("op_media: %lf, desvest: %lf\n", &op_media, &desvest);
     }
 
     char output_path[512];
@@ -537,7 +541,7 @@ void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, do
     int total_nodos = 0;
     double delta;
     leer_red(filename_input, &vecinos, &grados, &total_nodos);
-    double x[total_nodos];
+    double* x = malloc(total_nodos * sizeof(double));
     delta= condiciones_iniciales(K,total_nodos,x);
     int j=0;
     bool flag=false;
@@ -548,6 +552,7 @@ void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, do
         j++;
     }
     flag= esta_termalizada(K,betta,delta,vecinos,grados,x,total_nodos);
+    polarizacion(x,total_nodos, &op_media,&desvest);
+   // printf("%lf, desvest: %lf\n", op_media, desvest);
 }
-polarizacion(x, total_nodos, op_media, desvest);
 }
