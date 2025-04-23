@@ -51,6 +51,10 @@ void evolucion_persona_a_persona(char* filename_input, char* filename_output, in
 
 double cacula_velocidad_modulo(double K, double betta, double delta, int* vecinos, int *grados, double* x, int total_nodos);
 
-bool esta_termalizada(K,betta,delta,vecinos,grados,x,total_nodos);
+bool esta_termalizada(double K, double betta, double delta, int* vecinos, int* grados, double* x, int total_nodos);
+
+void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*filename_output, double N_pasos, double dt);
+
+void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, double K, double betta, double *op_media, double *desvest);
 
 #endif

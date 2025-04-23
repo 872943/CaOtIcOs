@@ -311,7 +311,12 @@ void evolucion_persona_a_persona(char*filename_input,char*filename_output, int N
 bool esta_termalizada(double K, double betta, double delta, int* vecinos, int* grados, double* x, int total_nodos) {
     double a = 0.03;  // Parámetro para determinar si el sistema está termalizado
     double v = cacula_velocidad_modulo(K, betta, delta, vecinos, grados, x, total_nodos);
-    return v < (a * K) * sqrt(total_nodos);
+    if (K<1){
+        return (v<sqrt(total_nodos)*a);
+    }else{
+        return (v<sqrt(total_nodos)*a*K);
+
+    }
 }
 
 
@@ -322,7 +327,6 @@ void muchas_simulaciones_ER(int N_sim, int N_pasos, double dt, double K, double 
 
     int indice_salida = obtener_siguiente_indice(carpeta_output);
     int indice_salida_inicial = indice_salida;
-    printf('te lo suplico');
 
     for (int j = 0; j < N_sim; j++) {
         char filename_input[512];
@@ -467,12 +471,14 @@ double valor_medio(double arr[], int tam) {
 }
 
 void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*filename_output, double N_pasos, double dt) {
+    char* carpeta_output = "C:\\Users\\USUARIO\\CaOtIcOs\\Resultados (PARTE 1)\\MAPA CALOR";
     int polarizadas = 0;
     int no_polarizadas = 0;
     char filename_input[512];
     double op_media, desvest;
 
     for (int i = 0; i < N_redes; i++) {
+        printf("+1");
         sprintf(filename_input, "ARCHIVOS_REDES\\ER\\ER_%d.txt", rede_ini + i);
         evolucion_hasta_decir_basta(filename_input, N_pasos, dt, K, betta, &op_media, &desvest);
         if (fabs(op_media) < desvest) {
@@ -482,15 +488,45 @@ void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*fil
         }
     }
 
-    FILE* archivo = fopen(filename_output, "a");
+    char output_path[512];
+    sprintf(output_path, "%s\\%s.txt", carpeta_output, filename_output);  
+
+    FILE* archivo = fopen(output_path, "a");
     if (archivo == NULL) {
-        fprintf(stderr, "Error al abrir el archivo %s\n", filename_output);
+        fprintf(stderr, "Error al abrir o crear el archivo de salida %s\n", output_path);
         return;
     }
 
     fprintf(archivo, "%lf\t%lf\t%d\t%d\n", K, betta, polarizadas, no_polarizadas);
     fclose(archivo);
+
+    // Guardar historial
+    char historial_path[512];
+    sprintf(historial_path, "%s\\ER_Historial.txt", carpeta_output);  
+
+    FILE* historial = fopen(historial_path, "a");
+    if (historial == NULL) {
+        perror("No se pudo abrir el archivo de historial");
+        return;
+    }
+
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+
+    fprintf(historial, "--------------------------------------------------------------------------------\n");
+    fprintf(historial, "Fecha: %04d-%02d-%02d %02d:%02d:%02d\n", 
+            tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+            tm.tm_hour, tm.tm_min, tm.tm_sec);
+    fprintf(historial, "Redes (input): ER_%d.txt a ER_%d.txt\n", rede_ini, rede_ini + N_redes - 1);
+    fprintf(historial, "Resultados (output): %s\n", filename_output);
+    fprintf(historial, "Parámetros -> K: %.2lf | β: %.2lf | dt: %.4lf | N_pasos: %.0lf\n", 
+            K, betta, dt, N_pasos);
+    fprintf(historial, "--------------------------------------------------------------------------------\n\n");
+
+    fclose(historial);
 }
+
+
 
 void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, double K, double betta, double *op_media, double *desvest){
 
