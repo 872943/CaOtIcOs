@@ -487,7 +487,7 @@ void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*fil
         printf("+1");
         sprintf(filename_input, "ARCHIVOS_REDES\\ER\\ER_%d.txt", rede_ini + i);
         evolucion_hasta_decir_basta(filename_input, N_pasos, dt, K, betta, &op_media, &desvest);
-        if (fabs(op_media) < desvest) {
+        if (fabs(op_media) <= desvest) {
             polarizadas++;
         } else {
             no_polarizadas++;
@@ -553,6 +553,5 @@ void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, do
     }
     flag= esta_termalizada(K,betta,delta,vecinos,grados,x,total_nodos);
     polarizacion(x,total_nodos, &op_media,&desvest);
-   // printf("%lf, desvest: %lf\n", op_media, desvest);
 }
 }
