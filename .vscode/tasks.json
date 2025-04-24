@@ -65,22 +65,25 @@
             },
             "problemMatcher": ["$gcc"]
         },
-        {
-            "label": "Compilar Main (Parte 4)",
-            "type": "shell",
-            "command": "gcc",
-            "args": [
-                "${workspaceFolder}/CODIGOS EN C/main(parte 4).c",
-                "${workspaceFolder}/CODIGOS EN C/funciones.c",
-                "-o",
-                "${workspaceFolder}/CODIGOS EN C/main(parte 4).exe"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            },
-            "problemMatcher": ["$gcc"]
-        },
+        
+                {
+                    "label": "Compilar Main (Parte 4)",
+                    "type": "shell",
+                    "command": "gcc",
+                    "args": [
+                        "-o",
+                        "${workspaceFolder}/CODIGOS EN C/main(parte 4).exe",
+                        "${workspaceFolder}/CODIGOS EN C/main(Parte 4).c",
+                        "${workspaceFolder}/CODIGOS EN C/funciones.c",
+                        "-lm"
+                    ],
+                    "group": {
+                        "kind": "build",
+                        "isDefault": true
+                    },
+                    "problemMatcher": ["$gcc"],
+                    "detail": "Compila el archivo main(Parte 4).c"
+                },
         {
             "label": "Compilar Main (Parte 5)",
             "type": "shell",

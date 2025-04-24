@@ -50,9 +50,16 @@ int main() {
     //ahora tenemos un fichero donde vamos a guardar los resultados de la polarizacion de cada red.
 
 
-    int num_polarizadas=0;
     char* nom_carp_in;
+    char fich_in[512];
     //bucle para <k>=6
+
+    FILE* file_out = fopen(filename_out, "a");
+        if (file_out == NULL) {
+            perror("Error al abrir el archivo de salida");
+            exit(1);
+        }
+    fclose(file_out); // Cerrar el archivo antes de abrirlo de nuevo para escribir
 
     for(int i=0;i<N;i++) {
         muchas_simulaciones_ER(N_sim, N_pasos, dt,K, betta, number_name);
@@ -63,19 +70,19 @@ int main() {
             //miro mis 200 ficheros y cuento cuantas son polarizadas
             //paso el archivo a la funcion es_polarizada y me devuelve un 1 o un 0.
             
-            char fich_in[512];
-            sprintf("C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER\\ER_%d.txt", ult_num_in-j);
+            
+            sprintf(fich_in,"C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER\\ER_%d.txt", ult_num_in-j);
             if (es_polarizada(fich_in)) {
-                num_polarizadas++;
+                n_pol_6 +=1;
             }
 
         }
 
         //ahora guardo el resultado en el fichero de salida
         fopen(filename_out,"a");
-        fprintf(filename_out, "%f\t %d\n", betta, num_polarizadas);
-        fclose(filename_out);
-
+        fprintf(file_out, "%f\t %d\n", betta, n_pol_6);
+        fclose(file_out);
+        n_pol_6=0; //reinicio el contador de redes polarizadas para la siguiente betta
         betta=betta+delta_betta;
     }
     //ahora tenemos un fichero donde tenemos la betta y el numero de redes polarizadas para cada betta.
@@ -89,8 +96,14 @@ int main() {
     sprintf(filename_out, "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\polarizacion\\14\\ER14_%d.txt", ult_num_out);
     //ahora tenemos un fichero donde vamos a guardar los resultados de la polarizacion de cada red.
 
+    file_out = fopen(filename_out, "a");
+        if (file_out == NULL) {
+            perror("Error al abrir el archivo de salida");
+            exit(1);
+        }
 
-    num_polarizadas=0;
+    fclose(file_out); // Cerrar el archivo antes de abrirlo de nuevo para escribir
+
     //bucle para <k>=6
 
     for(int i=0;i<N;i++) {
@@ -102,19 +115,19 @@ int main() {
             //miro mis 200 ficheros y cuento cuantas son polarizadas
             //paso el archivo a la funcion es_polarizada y me devuelve un 1 o un 0.
             
-            char fich_in[512];
-            sprintf("C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER\\ER_%d.txt", ult_num_in-j);
+            sprintf(fich_in,"C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER\\ER_%d.txt", ult_num_in-j);
             if (es_polarizada(fich_in)) {
-                num_polarizadas++;
+                n_pol_14 +=1;
             }
 
         }
 
         //ahora guardo el resultado en el fichero de salida
         fopen(filename_out,"a");
-        fprintf(filename_out, "%f\t %d\n", betta, num_polarizadas);
-        fclose(filename_out);
+        fprintf(file_out, "%f\t %d\n", betta, n_pol_14);
+        fclose(file_out);
 
+        n_pol_14=0; //reinicio el contador de redes polarizadas para la siguiente betta
         betta=betta+delta_betta;
     }
 
