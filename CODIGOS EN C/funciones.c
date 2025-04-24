@@ -477,7 +477,7 @@ double valor_medio(double arr[], int tam) {
 }
 
 void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*filename_output, double N_pasos, double dt) {
-    char* carpeta_output = "C:\\Users\\USUARIO\\CaOtIcOs\\Resultados (PARTE 1)\\MAPA CALOR";
+    char* carpeta_output = "C:\\Users\\Pc\\Documents\\Irene\\FISICA\\TERCERO\\caos\\trabajo\\\\CaOtIcOs\\Resultados (PARTE 1)\\MAPA CALOR";
     int polarizadas = 0;
     int no_polarizadas = 0;
     char filename_input[512];
@@ -508,7 +508,7 @@ void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*fil
 
     // Guardar historial
     char historial_path[512];
-    sprintf(historial_path, "%s\\ER_Historial.txt", carpeta_output);  
+    sprintf(historial_path, "%s\\ER_Historial_Irene.txt", carpeta_output);  
 
     FILE* historial = fopen(historial_path, "a");
     if (historial == NULL) {

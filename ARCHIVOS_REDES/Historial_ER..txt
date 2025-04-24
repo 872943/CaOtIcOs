@@ -310,3 +310,1035 @@ Archivo inicial generado: ER_700.txt
 Archivo final generado: ER_719.txt
 ---------------------------------------------------------------------------------
 
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 18:31:24
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 8
+aceptancia_N (%): 10
+aceptancia_k (%): 10
+Archivo inicial generado: ER_720.txt
+Archivo final generado: ER_720.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 18:32:02
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.5
+aceptancia_N (%): 1000
+aceptancia_k (%): 1000
+Archivo inicial generado: ER_721.txt
+Archivo final generado: ER_721.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 18:33:07
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2
+aceptancia_N (%): 100
+aceptancia_k (%): 100
+Archivo inicial generado: ER_722.txt
+Archivo final generado: ER_722.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 18:33:56
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2
+aceptancia_N (%): 30
+aceptancia_k (%): 30
+Archivo inicial generado: ER_723.txt
+Archivo final generado: ER_723.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 18:49:10
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2
+aceptancia_N (%): 30
+aceptancia_k (%): 30
+Archivo inicial generado: ER_724.txt
+Archivo final generado: ER_724.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 18:49:57
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2
+aceptancia_N (%): 20
+aceptancia_k (%): 20
+Archivo inicial generado: ER_725.txt
+Archivo final generado: ER_725.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 18:57:29
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2
+aceptancia_N (%): 20
+aceptancia_k (%): 20
+Archivo inicial generado: ER_726.txt
+Archivo final generado: ER_726.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:05:24
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3
+aceptancia_N (%): 10
+aceptancia_k (%): 10
+Archivo inicial generado: ER_727.txt
+Archivo final generado: ER_727.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:06:19
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_728.txt
+Archivo final generado: ER_728.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:08:59
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3.5
+aceptancia_N (%): 3
+aceptancia_k (%): 3
+Archivo inicial generado: ER_729.txt
+Archivo final generado: ER_729.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:10:28
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.5
+aceptancia_N (%): 10
+aceptancia_k (%): 10
+Archivo inicial generado: ER_730.txt
+Archivo final generado: ER_730.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:12:05
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.5
+aceptancia_N (%): 9
+aceptancia_k (%): 9
+Archivo inicial generado: ER_731.txt
+Archivo final generado: ER_731.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:12:41
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.3
+aceptancia_N (%): 15
+aceptancia_k (%): 15
+Archivo inicial generado: ER_732.txt
+Archivo final generado: ER_732.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:14:41
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4
+aceptancia_N (%): 2
+aceptancia_k (%): 2
+Archivo inicial generado: ER_733.txt
+Archivo final generado: ER_733.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:15:38
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.5
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_734.txt
+Archivo final generado: ER_734.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:18
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2
+aceptancia_N (%): 20
+aceptancia_k (%): 20
+Archivo inicial generado: ER_735.txt
+Archivo final generado: ER_735.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:18
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.1
+aceptancia_N (%): 20
+aceptancia_k (%): 20
+Archivo inicial generado: ER_736.txt
+Archivo final generado: ER_736.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:18
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.2
+aceptancia_N (%): 20
+aceptancia_k (%): 20
+Archivo inicial generado: ER_737.txt
+Archivo final generado: ER_737.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:18
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.3000000000000003
+aceptancia_N (%): 15
+aceptancia_k (%): 15
+Archivo inicial generado: ER_738.txt
+Archivo final generado: ER_738.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:18
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.4000000000000004
+aceptancia_N (%): 15
+aceptancia_k (%): 15
+Archivo inicial generado: ER_739.txt
+Archivo final generado: ER_739.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:21
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.5000000000000004
+aceptancia_N (%): 9
+aceptancia_k (%): 9
+Archivo inicial generado: ER_740.txt
+Archivo final generado: ER_740.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:22
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.6000000000000005
+aceptancia_N (%): 9
+aceptancia_k (%): 9
+Archivo inicial generado: ER_741.txt
+Archivo final generado: ER_741.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:22
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.7000000000000006
+aceptancia_N (%): 9
+aceptancia_k (%): 9
+Archivo inicial generado: ER_742.txt
+Archivo final generado: ER_742.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:23
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.8000000000000007
+aceptancia_N (%): 9
+aceptancia_k (%): 9
+Archivo inicial generado: ER_743.txt
+Archivo final generado: ER_743.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:23
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.900000000000001
+aceptancia_N (%): 9
+aceptancia_k (%): 9
+Archivo inicial generado: ER_744.txt
+Archivo final generado: ER_744.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:49
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2
+aceptancia_N (%): 20
+aceptancia_k (%): 20
+Archivo inicial generado: ER_745.txt
+Archivo final generado: ER_745.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:49
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.1
+aceptancia_N (%): 20
+aceptancia_k (%): 20
+Archivo inicial generado: ER_746.txt
+Archivo final generado: ER_746.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:49
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.2
+aceptancia_N (%): 20
+aceptancia_k (%): 20
+Archivo inicial generado: ER_747.txt
+Archivo final generado: ER_747.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:49
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.3000000000000003
+aceptancia_N (%): 15
+aceptancia_k (%): 15
+Archivo inicial generado: ER_748.txt
+Archivo final generado: ER_748.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:49
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.4000000000000004
+aceptancia_N (%): 15
+aceptancia_k (%): 15
+Archivo inicial generado: ER_749.txt
+Archivo final generado: ER_749.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:54
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.5000000000000004
+aceptancia_N (%): 9
+aceptancia_k (%): 9
+Archivo inicial generado: ER_750.txt
+Archivo final generado: ER_750.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:55
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.6000000000000005
+aceptancia_N (%): 9
+aceptancia_k (%): 9
+Archivo inicial generado: ER_751.txt
+Archivo final generado: ER_751.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:55
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.7000000000000006
+aceptancia_N (%): 9
+aceptancia_k (%): 9
+Archivo inicial generado: ER_752.txt
+Archivo final generado: ER_752.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:56
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.8000000000000007
+aceptancia_N (%): 9
+aceptancia_k (%): 9
+Archivo inicial generado: ER_753.txt
+Archivo final generado: ER_753.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:56
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 2.900000000000001
+aceptancia_N (%): 9
+aceptancia_k (%): 9
+Archivo inicial generado: ER_754.txt
+Archivo final generado: ER_754.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:57
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3.000000000000001
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_755.txt
+Archivo final generado: ER_755.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:58
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3.100000000000001
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_756.txt
+Archivo final generado: ER_756.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:58
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3.200000000000001
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_757.txt
+Archivo final generado: ER_757.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:58
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3.300000000000001
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_758.txt
+Archivo final generado: ER_758.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:58
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3.4000000000000012
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_759.txt
+Archivo final generado: ER_759.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:23:59
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3.5000000000000013
+aceptancia_N (%): 3
+aceptancia_k (%): 3
+Archivo inicial generado: ER_760.txt
+Archivo final generado: ER_760.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:01
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3.6000000000000014
+aceptancia_N (%): 3
+aceptancia_k (%): 3
+Archivo inicial generado: ER_761.txt
+Archivo final generado: ER_761.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:01
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3.7000000000000015
+aceptancia_N (%): 3
+aceptancia_k (%): 3
+Archivo inicial generado: ER_762.txt
+Archivo final generado: ER_762.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:01
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3.8000000000000016
+aceptancia_N (%): 3
+aceptancia_k (%): 3
+Archivo inicial generado: ER_763.txt
+Archivo final generado: ER_763.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:01
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 3.9000000000000017
+aceptancia_N (%): 3
+aceptancia_k (%): 3
+Archivo inicial generado: ER_764.txt
+Archivo final generado: ER_764.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:02
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.000000000000002
+aceptancia_N (%): 2
+aceptancia_k (%): 2
+Archivo inicial generado: ER_765.txt
+Archivo final generado: ER_765.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:02
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.100000000000001
+aceptancia_N (%): 2
+aceptancia_k (%): 2
+Archivo inicial generado: ER_766.txt
+Archivo final generado: ER_766.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:02
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.200000000000001
+aceptancia_N (%): 2
+aceptancia_k (%): 2
+Archivo inicial generado: ER_767.txt
+Archivo final generado: ER_767.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:03
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.300000000000001
+aceptancia_N (%): 2
+aceptancia_k (%): 2
+Archivo inicial generado: ER_768.txt
+Archivo final generado: ER_768.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:03
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.4
+aceptancia_N (%): 2
+aceptancia_k (%): 2
+Archivo inicial generado: ER_769.txt
+Archivo final generado: ER_769.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:03
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.5
+aceptancia_N (%): 2
+aceptancia_k (%): 2
+Archivo inicial generado: ER_770.txt
+Archivo final generado: ER_770.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:04
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.6
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_771.txt
+Archivo final generado: ER_771.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:04
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.699999999999999
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_772.txt
+Archivo final generado: ER_772.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:05
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.799999999999999
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_773.txt
+Archivo final generado: ER_773.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:05
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.899999999999999
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_774.txt
+Archivo final generado: ER_774.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:05
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 4.999999999999998
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_775.txt
+Archivo final generado: ER_775.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:06
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 5.099999999999998
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_776.txt
+Archivo final generado: ER_776.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:06
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 5.1999999999999975
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_777.txt
+Archivo final generado: ER_777.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:06
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 5.299999999999997
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_778.txt
+Archivo final generado: ER_778.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:07
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 5.399999999999997
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_779.txt
+Archivo final generado: ER_779.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:07
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 5.4999999999999964
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_780.txt
+Archivo final generado: ER_780.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:08
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 5.599999999999996
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_781.txt
+Archivo final generado: ER_781.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:08
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 5.699999999999996
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_782.txt
+Archivo final generado: ER_782.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:08
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 5.799999999999995
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_783.txt
+Archivo final generado: ER_783.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:08
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 5.899999999999995
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_784.txt
+Archivo final generado: ER_784.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:08
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 5.999999999999995
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_785.txt
+Archivo final generado: ER_785.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:09
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 6.099999999999994
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_786.txt
+Archivo final generado: ER_786.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:09
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 6.199999999999994
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_787.txt
+Archivo final generado: ER_787.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:09
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 6.299999999999994
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_788.txt
+Archivo final generado: ER_788.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:09
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 6.399999999999993
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_789.txt
+Archivo final generado: ER_789.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:10
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 6.499999999999993
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_790.txt
+Archivo final generado: ER_790.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:10
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 6.5999999999999925
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_791.txt
+Archivo final generado: ER_791.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:10
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 6.699999999999992
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_792.txt
+Archivo final generado: ER_792.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:10
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 6.799999999999992
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_793.txt
+Archivo final generado: ER_793.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:11
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 6.8999999999999915
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_794.txt
+Archivo final generado: ER_794.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:11
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 6.999999999999991
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_795.txt
+Archivo final generado: ER_795.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:11
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 7.099999999999991
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_796.txt
+Archivo final generado: ER_796.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:11
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 7.19999999999999
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_797.txt
+Archivo final generado: ER_797.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:11
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 7.29999999999999
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_798.txt
+Archivo final generado: ER_798.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:11
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 7.39999999999999
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_799.txt
+Archivo final generado: ER_799.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:12
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 7.499999999999989
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_800.txt
+Archivo final generado: ER_800.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:12
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 7.599999999999989
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_801.txt
+Archivo final generado: ER_801.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:12
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 7.699999999999989
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_802.txt
+Archivo final generado: ER_802.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:12
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 7.799999999999988
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_803.txt
+Archivo final generado: ER_803.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:13
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 7.899999999999988
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_804.txt
+Archivo final generado: ER_804.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecuciÃ³n: 2025-04-24 19:24:13
+ParÃ¡metros:
+N_redes: 1
+N_nodos: 1000
+k_prom: 7.999999999999988
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_805.txt
+Archivo final generado: ER_805.txt
+---------------------------------------------------------------------------------
+

@@ -18,16 +18,16 @@ int main() {
     double delta_betta=0.05;
     
     double betta_actual=betta_inicial;
-    double K_actual=K_inicial;
+    double K_actual=K_final;
     
-    while(K_actual<K_final){
+    while(K_actual>K_inicial){
         printf("+1");
         betta_actual=betta_inicial;
         while(betta_actual<betta_final){
-            frac_polarizado(N_redes,rede_ini, K_actual, betta_actual, "RESULTADOS_MAPA", N_pasos,dt);
+            frac_polarizado(N_redes,rede_ini, K_actual, betta_actual, "RESULTADOS_MAPA_Irene", N_pasos,dt);
             betta_actual=betta_actual+delta_betta;
         }
-        K_actual=K_actual+delta_K;
+        K_actual=K_actual-delta_K;
         printf("+1");
     }
     

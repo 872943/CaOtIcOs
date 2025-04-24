@@ -1,0 +1,4 @@
+N_ideal: 1000
+N_real: 998
+k_prom_ideal: 6.5999999999999925
+k_prom_real: 6.627
