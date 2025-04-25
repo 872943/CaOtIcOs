@@ -6,7 +6,7 @@ int main() {
     srand(time(NULL)); // Inicializa aleatoriedad
     double dt=0.1;
     int N_pasos=500;
-    double K=0;;
+    double K=10;;
     int N_redes=10;
     int rede_ini=1;
 
