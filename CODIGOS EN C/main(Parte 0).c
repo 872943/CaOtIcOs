@@ -5,10 +5,10 @@ int main() {
 
     srand(time(NULL)); // Inicializa aleatoriedad
     double dt=0.1;
-    int N_pasos=500;
-    double K=10;;
-    int N_redes=10;
-    int rede_ini=1;
+    int N_pasos=50;
+    double K=1.0;
+    int N_redes=5;
+    int rede_ini=0;
 
     double betta_actual=-0.1;
     double betta_final=2;
@@ -17,7 +17,7 @@ int main() {
     while(betta_actual<betta_final){
         betta_actual=betta_actual+delta_betta;
         frac_polarizado(N_redes,rede_ini,K,betta_actual,N_pasos,dt);
-        calcular_fraccion_polarizados(K,betta_actual, N_redes, "Resultados (PARTE 0)\\PRUEBA\\RESULTADOS_PRUEBA.txt");
+        calcular_fraccion_polarizados(K,betta_actual, N_redes, "RESULTADOS.txt");
     }
   
     /*

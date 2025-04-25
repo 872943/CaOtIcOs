@@ -614,16 +614,27 @@ void calcular_fraccion_polarizados(double K, double betta, int N_res, const char
         }
 
         // Leer la segunda línea
+        // Leer la segunda línea
         if (fgets(linea, sizeof(linea), archivo) != NULL) {
             double media, desvest;
-            if (sscanf(linea, "%lf %lf", &media, &desvest) == 2) {
-                if (desvest > media) {
-                    polarizados++;
-                } else{
+         if (sscanf(linea, "%lf %lf", &media, &desvest) == 2) {
+            
+              if(fabs(media)<0.5 && desvest<0.5){
+                 no_polarizados++;
+              }
+               else{
+                    if (desvest>media){
+                       polarizados++;
+                  }
+                 else{
                     no_polarizados++;
                 }
             }
+        
+
         }
+    }
+
 
         fclose(archivo);
     }

@@ -1,0 +1,168 @@
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-16 19:23:22
+Parámetros:
+N_redes: 100
+N_nodos: 1000
+k_prom: 10
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_0.txt
+Archivo final generado: ER_99.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-17 15:52:08
+Parámetros:
+N_redes: 100
+N_nodos: 1000
+k_prom: 10
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_100.txt
+Archivo final generado: ER_199.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-17 16:44:01
+Parámetros:
+N_redes: 200
+N_nodos: 1000
+k_prom: 6
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_200.txt
+Archivo final generado: ER_399.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-17 16:48:37
+Parámetros:
+N_redes: 200
+N_nodos: 1000
+k_prom: 14
+aceptancia_N (%): 1
+aceptancia_k (%): 1
+Archivo inicial generado: ER_400.txt
+Archivo final generado: ER_599.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-22 11:30:28
+Parámetros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_600.txt
+Archivo final generado: ER_600.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-22 11:30:28
+Parámetros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.1
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_601.txt
+Archivo final generado: ER_601.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-22 11:30:28
+Parámetros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.2
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_602.txt
+Archivo final generado: ER_602.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-22 11:30:28
+Parámetros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.3000000000000003
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_603.txt
+Archivo final generado: ER_603.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-22 11:30:29
+Parámetros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.4000000000000004
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_604.txt
+Archivo final generado: ER_604.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-22 11:30:29
+Parámetros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.5000000000000004
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_605.txt
+Archivo final generado: ER_605.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-22 11:30:29
+Parámetros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.6000000000000005
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_606.txt
+Archivo final generado: ER_606.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-22 11:30:29
+Parámetros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.7000000000000006
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_607.txt
+Archivo final generado: ER_607.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-22 11:30:29
+Parámetros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.8000000000000007
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_608.txt
+Archivo final generado: ER_608.txt
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+Fecha de ejecución: 2025-04-22 11:30:29
+Parámetros:
+N_redes: 1
+N_nodos: 10
+k_prom: 2.900000000000001
+aceptancia_N (%): 5
+aceptancia_k (%): 5
+Archivo inicial generado: ER_609.txt
+Archivo final generado: ER_609.txt
+---------------------------------------------------------------------------------
+
