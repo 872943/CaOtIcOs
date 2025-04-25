@@ -599,7 +599,7 @@ void calcular_fraccion_polarizados(double K, double betta, int N_res, const char
 
     for (int i = 0; i < N_res; i++) {
         // Construir ruta completa del archivo ER_i.txt
-        sprintf(filepath, "Resultados (PARTE 0)\\PRUEBA\\%s\\ER_%d.txt", carpeta_path, i);
+        sprintf(filepath, "%s\\ER_%d.txt", carpeta_path, i);
         archivo = fopen(filepath, "r");
         if (archivo == NULL) {
             fprintf(stderr, "⚠️ No se pudo abrir el archivo: %s\n", filepath);
