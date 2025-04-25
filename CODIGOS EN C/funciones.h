@@ -11,6 +11,16 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <unistd.h> // Para sleep en Linux, si es necesario
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <errno.h>
+#ifdef _WIN32
+#include <direct.h>
+#define mkdir_p(dir) _mkdir(dir)
+#else
+#include <unistd.h>
+#define mkdir_p(dir) mkdir(dir, 0777)
+#endif
 
 // Declaraciones de funciones
 void leer_red(const char* filename, int** vecinos, int** grados, int* total_nodos);
@@ -53,8 +63,9 @@ double cacula_velocidad_modulo(double K, double betta, double delta, int* vecino
 
 bool esta_termalizada(double K, double betta, double delta, int* vecinos, int* grados, double* x, int total_nodos);
 
-void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*filename_output, double N_pasos, double dt);
+void frac_polarizado(int N_redes, int rede_ini, double K, double betta, double N_pasos, double dt);
 
-void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, double K, double betta, double *op_media, double *desvest);
+void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, double K, double betta,char*filename_output);
 
+void calcular_fraccion_polarizados(double K, double betta, int N_res, const char* filename_output);
 #endif
