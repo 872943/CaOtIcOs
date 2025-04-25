@@ -491,7 +491,7 @@ void frac_polarizado(int N_redes, int rede_ini, double K, double betta, double N
     char carpeta_output[128];
 
     // Crear nombres de carpetas a partir de K y betta
-    sprintf(carpeta_K, "%.2lf", K);
+    sprintf(carpeta_K, "Resultados (PARTE 0)\\PRUEBA\\%.2lf", K);
     sprintf(carpeta_betta, "%.2lf", betta);
     sprintf(carpeta_output, "%s\\%s", carpeta_K, carpeta_betta);
 
@@ -595,11 +595,11 @@ void calcular_fraccion_polarizados(double K, double betta, int N_res, const char
     int no_polarizados = 0;
 
     // Construir ruta de carpeta: carpeta K\betta
-    sprintf(carpeta_path, "%.2lf\\%.2lf", K, betta);
+    sprintf(carpeta_path, "Resultados (PARTE 0)\\PRUEBA\\%.2lf\\%.2lf", K, betta);
 
     for (int i = 0; i < N_res; i++) {
         // Construir ruta completa del archivo ER_i.txt
-        sprintf(filepath, "%s\\ER_%d.txt", carpeta_path, i);
+        sprintf(filepath, "Resultados (PARTE 0)\\PRUEBA\\%s\\ER_%d.txt", carpeta_path, i);
         archivo = fopen(filepath, "r");
         if (archivo == NULL) {
             fprintf(stderr, "⚠️ No se pudo abrir el archivo: %s\n", filepath);

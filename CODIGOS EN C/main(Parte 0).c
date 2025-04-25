@@ -17,7 +17,7 @@ int main() {
     while(betta_actual<betta_final){
         betta_actual=betta_actual+delta_betta;
         frac_polarizado(N_redes,rede_ini,K,betta_actual,N_pasos,dt);
-        calcular_fraccion_polarizados(K,betta_actual, N_redes, "RESULTADOS_PRUEBA.txt");
+        calcular_fraccion_polarizados(K,betta_actual, N_redes, "Resultados (PARTE 0)\\PRUEBA\\RESULTADOS_PRUEBA.txt");
     }
   
     /*
