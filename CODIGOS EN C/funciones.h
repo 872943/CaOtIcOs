@@ -69,7 +69,11 @@ void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, do
 
 void calcular_fraccion_polarizados(double K, double betta, int N_res, const char* filename_output);
 
+void evolucion_hasta_decir_basta_apartado5(char*filename_input, int N_pasos, double dt, double k,char*filename_output);
 
 void frac_polarizado_apartado5 (int N_redes, int rede_ini, double k, double N_pasos, double dt);
+
 void calcular_fraccion_polarizados_apartado5(double k, int N_res, const char* filename_output);
+
+double leer_k_desde_parametros(int red_id) ;
 #endif

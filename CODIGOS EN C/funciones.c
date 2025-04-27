@@ -654,58 +654,89 @@ void calcular_fraccion_polarizados(double K, double betta, int N_res, const char
     fclose(out);
 }
 
+void evolucion_hasta_decir_basta_apartado5(char*filename_input, int N_pasos, double dt, double k,char*filename_output){
+    int* vecinos;
+    int* grados;
+    int total_nodos = 0;
+    double delta;
+    double op_media, desvest;
+    int num_sim=0;
+    leer_red(filename_input, &vecinos, &grados, &total_nodos);
+    double* x = malloc(total_nodos * sizeof(double));
+    delta= condiciones_iniciales(10,total_nodos,x);
+    bool flag=false;
+    FILE *archivo;
+    archivo = fopen(filename_output, "w"); //Para crear el archivo
+    fprintf(archivo, "%lf\t%d\t%lf\t%s\n",k, N_pasos, dt,filename_input);
+    if (archivo == NULL) {
+        fprintf(stderr, "Error al abrir el archivo %s\n", filename_output);
+        return;
+    }
+    fclose(archivo);
+
+    while(flag==false){
+    for(int j=0;j<N_pasos;j++){
+        rk4_step(x,total_nodos,dt,10, 0,delta,vecinos, grados);
+        j++;
+    }
+    flag= esta_termalizada(10,0,delta,vecinos,grados,x,total_nodos);
+    }
+    op_media=valor_medio(x,total_nodos);
+    desvest=desviacion_estandar(x,total_nodos,op_media);
+
+    archivo = fopen(filename_output, "a");  // "a" para añadir sin sobrescribir
+    fprintf(archivo, "%lf\t%lf\n",op_media,desvest);
+    for(int i=0;i<total_nodos;i++){
+        fprintf(archivo, "%lf\n", x[i]);
+    }
+    fclose(archivo);
+}
+
 
 void frac_polarizado_apartado5 (int N_redes, int rede_ini, double k, double N_pasos, double dt) {
     char carpeta_k[128]; 
+    sprintf(carpeta_k, "Resultados (PARTE 5)\\%.2lf", k);
 
-    // Crear ruta de carpeta directamente con el parámetro k
-    sprintf(carpeta_k, "Resultados (PARTE 5)\\PRUEBA\\%.2lf", k);
-    
-    // Intentar crear la carpeta para k
     if (mkdir_p(carpeta_k) != 0 && errno != EEXIST) {
         fprintf(stderr, "❌ Error: No se pudo crear la carpeta '%s'.\n", carpeta_k);
         return;
     }
-    int polarizadas = 0, ult;
-    int no_polarizadas = 0;
+
     char filename_input[512];
-    double op_media, desvest;
     char filename_output[512];
-    
-    // Obtener siguiente índice directamente desde la carpeta k
-    ult = obtener_siguiente_indice(carpeta_k);
-    
-    for (int i = 0; i < N_redes; i++) {
+    int N_sim = 100;
+
+    for (int sim = 0; sim < N_sim; sim++) {
         printf("+1");
-        sprintf(filename_input, "ARCHIVOS_REDES\\ER\\ER_%d.txt", rede_ini + i);
-        sprintf(filename_output, "%s\\ER_%d.txt", carpeta_k, ult + i);  // Usamos carpeta_k directamente
-        evolucion_hasta_decir_basta(filename_input, N_pasos, dt, 10,0, filename_output); 
+        sprintf(filename_input, "ARCHIVOS_REDES\\ER\\ER_%d.txt", rede_ini);
+        sprintf(filename_output, "%s\\ER_%d.txt", carpeta_k, sim);  // Archivo por simulación
+        evolucion_hasta_decir_basta_apartado5(filename_input, N_pasos, dt, k, filename_output);
     }
-    
-    // Historial ahora también va en carpeta_k
+
+    // Crear historial
     char historial_path[512];
-    sprintf(historial_path, "%s\\ER_Historial.txt", carpeta_k);  // Ruta simplificada
+    sprintf(historial_path, "%s\\ER_Historial.txt", carpeta_k);
     
     FILE* historial = fopen(historial_path, "a");
     if (historial == NULL) {
         perror("❌ No se pudo abrir el archivo de historial");
         return;
     }
-    
+
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
-    
-    fprintf(historial, "--------------------------------------------------------------------------------\n");
-fprintf(historial, "Fecha: %04d-%02d-%02d %02d:%02d:%02d\n", 
-        tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
-        tm.tm_hour, tm.tm_min, tm.tm_sec);
-fprintf(historial, "Redes (input): ER_%d.txt a ER_%d.txt\n", rede_ini, rede_ini + N_redes - 1);
-fprintf(historial, "Resultados (output): %s\n", filename_output);
-fprintf(historial, "Parámetros -> k: %.2lf | dt: %.4lf | N_pasos: %.0lf\n",  // Eliminado betta
-        k, dt, N_pasos);  // Cambiado K por k
-fprintf(historial, "--------------------------------------------------------------------------------\n\n");
 
-fclose(historial);
+    fprintf(historial, "--------------------------------------------------------------------------------\n");
+    fprintf(historial, "Fecha: %04d-%02d-%02d %02d:%02d:%02d\n", 
+            tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+            tm.tm_hour, tm.tm_min, tm.tm_sec);
+    fprintf(historial, "Red de entrada: ER_%d.txt\n", rede_ini);
+    fprintf(historial, "Simulaciones realizadas: %d\n", N_sim);
+    fprintf(historial, "Parámetros -> k: %.2lf | dt: %.4lf | N_pasos: %.0lf\n",
+            k, dt, N_pasos);
+    fprintf(historial, "--------------------------------------------------------------------------------\n\n");
+
+    fclose(historial);
 }
 
 
@@ -716,10 +747,9 @@ void calcular_fraccion_polarizados_apartado5(double k, int N_res, const char* fi
     int polarizados = 0;
     int no_polarizados = 0;
 
-    // Construir ruta de carpeta basada solo en k
-    sprintf(carpeta_path, "Resultados (PARTE 5)\\PRUEBA\\%.2lf", k);
+    sprintf(carpeta_path, "Resultados (PARTE 5)\\%.2lf", k);
 
-    for (int i = 0; i < N_res; i++) {
+    for (int i = 0; i < 100; i++) {   // <- Leer las 100 simulaciones
         sprintf(filepath, "%s\\ER_%d.txt", carpeta_path, i);
         archivo = fopen(filepath, "r");
         
@@ -729,17 +759,15 @@ void calcular_fraccion_polarizados_apartado5(double k, int N_res, const char* fi
         }
 
         char linea[512];
-        // Leer y descartar la primera línea
         if (fgets(linea, sizeof(linea), archivo) == NULL) {
             fclose(archivo);
             continue;
         }
 
-        // Procesar segunda línea
         if (fgets(linea, sizeof(linea), archivo) != NULL) {
             double media, desvest;
             if (sscanf(linea, "%lf %lf", &media, &desvest) == 2) {
-                if(fabs(media) < 0.5 && desvest < 0.5) {
+                if (fabs(media) < 0.5 && desvest < 0.5) {
                     no_polarizados++;
                 } else {
                     polarizados += (desvest > media) ? 1 : 0;
@@ -750,11 +778,9 @@ void calcular_fraccion_polarizados_apartado5(double k, int N_res, const char* fi
         fclose(archivo);
     }
 
-    // Calcular fracciones
-    double frac_polarizados = (double)polarizados / N_res;
-    double frac_no_polarizados = (double)no_polarizados / N_res;
+    double frac_polarizados = (double)polarizados / 100.0;  // <- Dividir entre 100
+    double frac_no_polarizados = (double)no_polarizados / 100.0;
 
-    // Escribir resultados
     FILE* out = fopen(filename_output, "a");
     if (out == NULL) {
         fprintf(stderr, "❌ No se pudo abrir el archivo de salida: %s\n", filename_output);
@@ -763,4 +789,44 @@ void calcular_fraccion_polarizados_apartado5(double k, int N_res, const char* fi
 
     fprintf(out, "%.2lf %.6lf %.6lf\n", k, frac_polarizados, frac_no_polarizados);
     fclose(out);
+}
+
+
+double leer_k_desde_parametros(int red_id) {
+    char ruta_parametros[512];
+    sprintf(ruta_parametros, "C:\\Users\\Pc\\Documents\\Irene\\FISICA\\TERCERO\\caos\\trabajo\\CaOtIcOs\\ARCHIVOS_REDES\\ER_parametros\\ER_%d.txt", red_id);
+    
+    FILE* archivo = fopen(ruta_parametros, "r");
+    if (archivo == NULL) {
+        fprintf(stderr, "❌ Error: No se pudo abrir el archivo de parámetros %s\n", ruta_parametros);
+        exit(EXIT_FAILURE);
+    }
+
+    char linea[512];
+    // Leer las primeras 3 líneas y descartarlas
+    for (int i = 0; i < 3; i++) {
+        if (fgets(linea, sizeof(linea), archivo) == NULL) {
+            fprintf(stderr, "❌ Error leyendo línea %d del archivo %s\n", i+1, ruta_parametros);
+            fclose(archivo);
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    // Leer la cuarta línea
+    if (fgets(linea, sizeof(linea), archivo) == NULL) {
+        fprintf(stderr, "❌ Error leyendo la cuarta línea del archivo %s\n", ruta_parametros);
+        fclose(archivo);
+        exit(EXIT_FAILURE);
+    }
+
+    fclose(archivo);
+
+    // Extraer el valor de k de la línea
+    double k_valor = 0.0;
+    if (sscanf(linea, "k_prom_real: %lf", &k_valor) != 1) {
+        fprintf(stderr, "❌ No se pudo leer k_prom_real en el archivo %s\n", ruta_parametros);
+        exit(EXIT_FAILURE);
+    }
+
+    return k_valor;
 }

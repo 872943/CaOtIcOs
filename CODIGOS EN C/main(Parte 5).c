@@ -1,4 +1,4 @@
-#include "funciones.h"
+
 /*  Notad que, si el grado es lo suficientemente pequeño (y por tanto el horizonte
     de información), puede aparecer polarización incluso en ausencia de homofilia
     (beta = 0). Estudiad sistemáticamente esta aparición con redes ER de grado bajo,
@@ -6,46 +6,37 @@
     (reproduciendo cualitativamente la figura 4 del paper, pero con fracciones de
     polarización).*/    
 
-
-    #include "funciones.h"
+#include "funciones.h"
 
 
 int main() {
-        //hola caracola
-        srand(time(NULL)); // Inicializa aleatoriedad
-        double dt=0.1;
-        int N_pasos=50;
-        double K=10;
-        int N_redes=100;
+    srand(time(NULL)); // Inicializa aleatoriedad
+    double dt = 0.1;
+    int N_pasos = 50;
+    int N_redes = 1;
+    int rede_ini = 745;    // Comenzar desde ER_745
+    int rede_final = 805;  // Terminar en ER_805
+    int N_sim = 100;
+    double delta_k = 0.1;
+    double k_actual = 2.0;
+    double k_final = 8.0;
 
-        int rede_ini=0;
-    
-        double betta_= 0 ;
-        double k_inicial=2;
-        double k_final=8;
-        double delta_k=0.1;
+    int id_red = rede_ini;
 
-        double k_actual=k_inicial;
+    while (id_red <= rede_final && k_actual <= k_final) {
+        // Leer el valor real de k del archivo de parámetros
+        double k_real = leer_k_desde_parametros(id_red);
 
-        while(k_actual<k_final){
-            frac_polarizado_apartado5(N_redes, rede_ini,k_actual, N_pasos,dt);
-            calcular_fraccion_polarizados_apartado5(k_actual, N_redes, "Resultados.txt");
-            k_actual=k_actual+delta_k;
-        }
-    
-      
-        /*
-               evolucion_persona_a_persona(
-            "ARCHIVOS_REDES/ER/ER_680.txt",
-            "Resultados (PARTE 0)/Evolucion individual/ER/evoluciones/ER_680.txt",
-            N_pasos,
-            dt,
-            K,
-            betta,
-            "Resultados (PARTE 0)/Evolucion individual/ER/velocidades/ER_680.txt"
-        );
-        
-        */
-        return 0;
+        printf("Procesando red ER_%d con k_real = %.4lf\n", id_red, k_real);
+
+        // Llamadas a las funciones usando k_real
+        frac_polarizado_apartado5(N_redes, id_red, k_real, N_pasos, dt);
+        calcular_fraccion_polarizados_apartado5(k_real, N_redes, "Resultados.txt");
+
+        // Avanzar
+        id_red++;
+        k_actual += delta_k;
+    }
+
+    return 0;
 }
-    
