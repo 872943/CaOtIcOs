@@ -325,8 +325,6 @@ bool esta_termalizada(double K, double betta, double delta, int* vecinos, int* g
     }
 }
 
-
-
 void muchas_simulaciones_ER(int N_sim, int N_pasos, double dt, double K, double betta, int number_name) {
     char* direccion_input = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\ARCHIVOS_REDES\\ER";
     char* carpeta_output = "C:\\Users\\HP\\Desktop\\FISICA\\3 (2024-2025)\\segundo cuatri\\caos\\trabajo\\CaOtIcOs\\Resultados (PARTE 4)\\Evolucion temporal (promedio y desvest)\\ER";
@@ -427,6 +425,14 @@ void muchas_simulaciones_WS(int N_sim, int N_pasos, double dt, double K, double 
     fclose(historial);
 }
 
+double desviacion_estandar(double arr[], int tam, double media) {
+    // Función que calcula la desviación estándar de un array de doubles
+    double suma = 0.0;
+    for (int i = 0; i < tam; i++) {
+        suma += (arr[i] - media) * (arr[i] - media);
+    }
+    return sqrt(suma / tam);
+}
 bool es_polarizada(const char* filename) {
     //le pasas el nombre de un archivo con la evolución temporal de una red y a partir de los
     //últimos valores registrados para la media y la varianza, te dice si es polarizada (true) o no (false)
@@ -476,39 +482,49 @@ double valor_medio(double arr[], int tam) {
     return suma / tam;
 }
 
-void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*filename_output, double N_pasos, double dt) {
-    char* carpeta_output = "C:\\Users\\Pc\\Documents\\Irene\\FISICA\\TERCERO\\caos\\trabajo\\\\CaOtIcOs\\Resultados (PARTE 1)\\MAPA CALOR";
-    int polarizadas = 0;
+void frac_polarizado(int N_redes, int rede_ini, double K, double betta, double N_pasos, double dt) {
+
+
+
+    char carpeta_K[64];
+    char carpeta_betta[64];
+    char carpeta_output[128];
+
+    // Crear nombres de carpetas a partir de K y betta
+    sprintf(carpeta_K, "Resultados (PARTE 0)\\PRUEBA\\%.2lf", K);
+    sprintf(carpeta_betta, "%.2lf", betta);
+    sprintf(carpeta_output, "%s\\%s", carpeta_K, carpeta_betta);
+
+    // Intentar crear carpeta K
+    if (mkdir_p(carpeta_K) != 0 && errno != EEXIST) {
+        fprintf(stderr, "❌ Error: No se pudo crear la carpeta '%s'.\n", carpeta_K);
+        return;
+    }
+
+    // Intentar crear carpeta betta
+    if (mkdir_p(carpeta_output) != 0 && errno != EEXIST) {
+        fprintf(stderr, "❌ Error: No se pudo crear la carpeta '%s'.\n", carpeta_output);
+        return;
+    }
+
+    int polarizadas = 0, ult;
     int no_polarizadas = 0;
     char filename_input[512];
     double op_media, desvest;
+    char filename_output[512];
+
+    ult=obtener_siguiente_indice(carpeta_output);
 
     for (int i = 0; i < N_redes; i++) {
         printf("+1");
         sprintf(filename_input, "ARCHIVOS_REDES\\ER\\ER_%d.txt", rede_ini + i);
-        evolucion_hasta_decir_basta(filename_input, N_pasos, dt, K, betta, &op_media, &desvest);
-        if (fabs(op_media) <= desvest) {
-            polarizadas++;
-        } else {
-            no_polarizadas++;
-        }
+        sprintf(filename_output, "%s\\ER_%d.txt",carpeta_output, ult + i);
+        evolucion_hasta_decir_basta(filename_input, N_pasos, dt, K, betta,filename_output);
     }
-
-    char output_path[512];
-    sprintf(output_path, "%s\\%s.txt", carpeta_output, filename_output);  
-
-    FILE* archivo = fopen(output_path, "a");
-    if (archivo == NULL) {
-        fprintf(stderr, "Error al abrir o crear el archivo de salida %s\n", output_path);
-        return;
-    }
-
-    fprintf(archivo, "%lf\t%lf\t%d\t%d\n", K, betta, polarizadas, no_polarizadas);
-    fclose(archivo);
 
     // Guardar historial
     char historial_path[512];
-    sprintf(historial_path, "%s\\ER_Historial_Irene.txt", carpeta_output);  
+    sprintf(historial_path, "%s\\ER_Historial.txt", carpeta_output);  
 
     FILE* historial = fopen(historial_path, "a");
     if (historial == NULL) {
@@ -533,18 +549,25 @@ void frac_polarizado(int N_redes, int rede_ini, double K, double betta, char*fil
 }
 
 
-/*
-void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, double K, double betta, double *op_media, double *desvest){
 
+void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, double K, double betta,char*filename_output){
     int* vecinos;
     int* grados;
     int total_nodos = 0;
     double delta;
+    double op_media, desvest;
     leer_red(filename_input, &vecinos, &grados, &total_nodos);
     double* x = malloc(total_nodos * sizeof(double));
     delta= condiciones_iniciales(K,total_nodos,x);
-    int j=0;
     bool flag=false;
+    FILE *archivo;
+    archivo = fopen(filename_output, "w"); //Para crear el archivo
+    fprintf(archivo, "%lf\t%lf\t%d\t%lf\t%s\n",K, betta, N_pasos, dt,filename_input);
+    if (archivo == NULL) {
+        fprintf(stderr, "Error al abrir el archivo %s\n", filename_output);
+        return;
+    }
+    fclose(archivo);
 
     while(flag==false){
     for(int j=0;j<N_pasos;j++){
@@ -552,6 +575,192 @@ void evolucion_hasta_decir_basta(char*filename_input, int N_pasos, double dt, do
         j++;
     }
     flag= esta_termalizada(K,betta,delta,vecinos,grados,x,total_nodos);
-    polarizacion(x,total_nodos, &op_media,&desvest);
     }
-}*/
+    op_media=valor_medio(x,total_nodos);
+    desvest=desviacion_estandar(x,total_nodos,op_media);
+
+    archivo = fopen(filename_output, "a");  // "a" para añadir sin sobrescribir
+    fprintf(archivo, "%lf\t%lf\n",op_media,desvest);
+    for(int i=0;i<total_nodos;i++){
+        fprintf(archivo, "%lf\n", x[i]);
+    }
+    fclose(archivo);
+}
+
+void calcular_fraccion_polarizados(double K, double betta, int N_res, const char* filename_output) {
+    char carpeta_path[128];
+    char filepath[256];
+    FILE* archivo;
+    int polarizados = 0;
+    int no_polarizados = 0;
+
+    // Construir ruta de carpeta: carpeta K\betta
+    sprintf(carpeta_path, "Resultados (PARTE 0)\\PRUEBA\\%.2lf\\%.2lf", K, betta);
+
+    for (int i = 0; i < N_res; i++) {
+        // Construir ruta completa del archivo ER_i.txt
+        sprintf(filepath, "%s\\ER_%d.txt", carpeta_path, i);
+        archivo = fopen(filepath, "r");
+        if (archivo == NULL) {
+            fprintf(stderr, "⚠️ No se pudo abrir el archivo: %s\n", filepath);
+            continue;
+        }
+
+        char linea[512];
+        // Leer y descartar la primera línea
+        if (fgets(linea, sizeof(linea), archivo) == NULL) {
+            fclose(archivo);
+            continue;
+        }
+
+        // Leer la segunda línea
+        // Leer la segunda línea
+        if (fgets(linea, sizeof(linea), archivo) != NULL) {
+            double media, desvest;
+         if (sscanf(linea, "%lf %lf", &media, &desvest) == 2) {
+            
+              if(fabs(media)<0.5 && desvest<0.5){
+                 no_polarizados++;
+              }
+               else{
+                    if (desvest>media){
+                       polarizados++;
+                  }
+                 else{
+                    no_polarizados++;
+                }
+            }
+        
+
+        }
+    }
+
+
+        fclose(archivo);
+    }
+
+    // Calcular fracciones
+    double frac_polarizados = (double)polarizados / N_res;
+    double frac_no_polarizados = (double)no_polarizados / N_res;
+
+    // Escribir en archivo de salida
+    FILE* out = fopen(filename_output, "a");
+    if (out == NULL) {
+        fprintf(stderr, "❌ No se pudo abrir el archivo de salida: %s\n", filename_output);
+        return;
+    }
+
+    fprintf(out, "%.2lf %.2lf %.6lf %.6lf\n", K, betta, frac_polarizados, frac_no_polarizados);
+    fclose(out);
+}
+
+
+void frac_polarizado_apartado5 (int N_redes, int rede_ini, double k, double N_pasos, double dt) {
+    char carpeta_k[128]; 
+
+    // Crear ruta de carpeta directamente con el parámetro k
+    sprintf(carpeta_k, "Resultados (PARTE 5)\\PRUEBA\\%.2lf", k);
+    
+    // Intentar crear la carpeta para k
+    if (mkdir_p(carpeta_k) != 0 && errno != EEXIST) {
+        fprintf(stderr, "❌ Error: No se pudo crear la carpeta '%s'.\n", carpeta_k);
+        return;
+    }
+    int polarizadas = 0, ult;
+    int no_polarizadas = 0;
+    char filename_input[512];
+    double op_media, desvest;
+    char filename_output[512];
+    
+    // Obtener siguiente índice directamente desde la carpeta k
+    ult = obtener_siguiente_indice(carpeta_k);
+    
+    for (int i = 0; i < N_redes; i++) {
+        printf("+1");
+        sprintf(filename_input, "ARCHIVOS_REDES\\ER\\ER_%d.txt", rede_ini + i);
+        sprintf(filename_output, "%s\\ER_%d.txt", carpeta_k, ult + i);  // Usamos carpeta_k directamente
+        evolucion_hasta_decir_basta(filename_input, N_pasos, dt, 10,0, filename_output); 
+    }
+    
+    // Historial ahora también va en carpeta_k
+    char historial_path[512];
+    sprintf(historial_path, "%s\\ER_Historial.txt", carpeta_k);  // Ruta simplificada
+    
+    FILE* historial = fopen(historial_path, "a");
+    if (historial == NULL) {
+        perror("❌ No se pudo abrir el archivo de historial");
+        return;
+    }
+    
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+    
+    fprintf(historial, "--------------------------------------------------------------------------------\n");
+fprintf(historial, "Fecha: %04d-%02d-%02d %02d:%02d:%02d\n", 
+        tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+        tm.tm_hour, tm.tm_min, tm.tm_sec);
+fprintf(historial, "Redes (input): ER_%d.txt a ER_%d.txt\n", rede_ini, rede_ini + N_redes - 1);
+fprintf(historial, "Resultados (output): %s\n", filename_output);
+fprintf(historial, "Parámetros -> k: %.2lf | dt: %.4lf | N_pasos: %.0lf\n",  // Eliminado betta
+        k, dt, N_pasos);  // Cambiado K por k
+fprintf(historial, "--------------------------------------------------------------------------------\n\n");
+
+fclose(historial);
+}
+
+
+void calcular_fraccion_polarizados_apartado5(double k, int N_res, const char* filename_output) {
+    char carpeta_path[128];
+    char filepath[256];
+    FILE* archivo;
+    int polarizados = 0;
+    int no_polarizados = 0;
+
+    // Construir ruta de carpeta basada solo en k
+    sprintf(carpeta_path, "Resultados (PARTE 5)\\PRUEBA\\%.2lf", k);
+
+    for (int i = 0; i < N_res; i++) {
+        sprintf(filepath, "%s\\ER_%d.txt", carpeta_path, i);
+        archivo = fopen(filepath, "r");
+        
+        if (archivo == NULL) {
+            fprintf(stderr, "⚠️ No se pudo abrir el archivo: %s\n", filepath);
+            continue;
+        }
+
+        char linea[512];
+        // Leer y descartar la primera línea
+        if (fgets(linea, sizeof(linea), archivo) == NULL) {
+            fclose(archivo);
+            continue;
+        }
+
+        // Procesar segunda línea
+        if (fgets(linea, sizeof(linea), archivo) != NULL) {
+            double media, desvest;
+            if (sscanf(linea, "%lf %lf", &media, &desvest) == 2) {
+                if(fabs(media) < 0.5 && desvest < 0.5) {
+                    no_polarizados++;
+                } else {
+                    polarizados += (desvest > media) ? 1 : 0;
+                    no_polarizados += (desvest > media) ? 0 : 1;
+                }
+            }
+        }
+        fclose(archivo);
+    }
+
+    // Calcular fracciones
+    double frac_polarizados = (double)polarizados / N_res;
+    double frac_no_polarizados = (double)no_polarizados / N_res;
+
+    // Escribir resultados
+    FILE* out = fopen(filename_output, "a");
+    if (out == NULL) {
+        fprintf(stderr, "❌ No se pudo abrir el archivo de salida: %s\n", filename_output);
+        return;
+    }
+
+    fprintf(out, "%.2lf %.6lf %.6lf\n", k, frac_polarizados, frac_no_polarizados);
+    fclose(out);
+}
